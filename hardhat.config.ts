@@ -12,7 +12,7 @@ import { resolve } from "path";
 dotenvConfig({ path: resolve(__dirname, "./.env") });
 
 const chainIds = {
-  ganache: 1337,
+  ganache: 8546,
   goerli: 5,
   hardhat: 31337,
   kovan: 42,
@@ -38,6 +38,7 @@ if (!process.env.INFURA_API_KEY) {
 
 function createTestnetConfig(network: keyof typeof chainIds): NetworkUserConfig {
   const url: string = "https://" + network + ".infura.io/v3/" + infuraApiKey;
+  if (network === "ganache") {const url:string = "http://127.0.0.1:8546"}
   return {
     accounts: {
       count: 10,
@@ -63,6 +64,8 @@ const config: HardhatUserConfig = {
     kovan: createTestnetConfig("kovan"),
     rinkeby: createTestnetConfig("rinkeby"),
     ropsten: createTestnetConfig("ropsten"),
+    ganache: createTestnetConfig("ganache"),
+  
   },
   paths: {
     artifacts: "./artifacts",

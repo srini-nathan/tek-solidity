@@ -1,10 +1,9 @@
 {
-  "name": "@paulrberg/solidity-template",
+  "name": "@typed-solidity-template",
   "description": "Setup for writing Solidity smart contracts",
   "version": "1.0.0",
   "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://paulrberg.com"
+    "name": "Srinivasan Swaminathan"
   },
   "dependencies": {
     "solc": "0.8.1"
@@ -57,7 +56,7 @@
     "smart-contracts",
     "solidity"
   ],
-  "license": "WTFPL",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
