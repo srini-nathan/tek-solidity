@@ -78,3 +78,4 @@ Delete the smart contract artifacts, the coverage reports and the Hardhat cache:
 ```sh
 $ yarn clean
 ```
+# supply-chain-demo
